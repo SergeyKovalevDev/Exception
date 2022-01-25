@@ -1,0 +1,4 @@
+name;quantity;
+shirt;10;100
+trousers;5;45
+shoes;23;460

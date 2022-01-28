@@ -5,9 +5,10 @@ public class Main {
 
     private static void taskStarter() {
         try {
-            System.out.println(new HandlerSaleResults("report.txt").fileReading());
-//            System.out.println(new HandlerSaleResults("report_headerError.txt").fileReading());
-//            System.out.println(new HandlerSaleResults("report_errorInString.txt").fileReading());
+            System.out.println(new HandlerSaleResults(new String[]{
+                    "report.txt",
+                    "report_headerError.txt",
+                    "report_errorInString.txt"}).fileReading());
         } catch (HandlerException e) {
             System.out.println(e.getMessage());
         }

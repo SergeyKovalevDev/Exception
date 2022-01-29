@@ -4,13 +4,22 @@ public class Main {
     }
 
     private static void taskStarter() {
-        try {
-            System.out.println(new HandlerSaleResults(new String[]{
-                    "report.txt",
-                    "report_headerError.txt",
-                    "report_errorInString.txt"}).fileReading());
-        } catch (HandlerException e) {
-            System.out.println(e.getMessage());
+        SaleResultsHandler handler = new SaleResultsHandler();
+        handler.setColumnName("cost");
+
+        String[] filenames = new String[] {
+                "report.txt",
+                null,
+                "report_missingFile.txt",
+                "report_emptyFile.txt",
+                "report_headerError.txt",
+                "report_errorInString.txt"};
+        for (String filename : filenames) {
+            try {
+                System.out.println(handler.fileHandler(filename));
+            } catch (HandlerException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }

@@ -6,6 +6,6 @@ public class HandlerException extends Exception {
 
     @Override
     public String getMessage() {
-        return "Handler of sale results error:\n" + super.getMessage();
+        return "Handler of sale results error: " + super.getMessage();
     }
 }
